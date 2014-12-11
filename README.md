@@ -15,12 +15,12 @@ Features
 Links
 =====
   
-  Homepage: https://erispa.github.io/aio
-  Wiki: https://github.com/erispa/aio/wiki
-  Issues: https://github.com/erispa/aio/issues
+  Homepage: https://erispa.github.io/aio<br>
+  Wiki: https://github.com/erispa/aio/wiki<br>
+  Issues: https://github.com/erispa/aio/issues<br>
   NPM: https://www.npmjs.com/package/aio
 
 License
 =======
-Copyright (c) 2014 Futago-za Ryuu, Erispa
+Copyright (c) 2014 Futago-za Ryuu, Erispa<br>
 The MIT License, http://opensource.org/licenses/MIT
