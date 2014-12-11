@@ -1,0 +1,49 @@
+{
+  "name": "aio",
+  "version": "0.0.0",
+  "description": "Aio IDE",
+  "keywords": [
+    "aio",
+    "ide",
+    "editor",
+    "source",
+    "plugins",
+    "html5",
+    "collaborative",
+    "chat",
+    "svn",
+    "git",
+    "solution",
+    "project"
+  ],
+  "homepage": "https://erispa.github.io/aio",
+  "author": {
+    "name": "Futago-za Ryuu",
+    "email": "futagoza.ryuu@gmail.com",
+    "url": "https://futagoza.github.io/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/erispa/aio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erispa/aio/issues"
+  },
+  
+  "main": "index.js",
+  "bin": {
+    "aio": "bin/aio"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mkdirp": "0.5.0",
+		"rimraf": "2.2.8",
+		"fs-extra": "0.12.0",
+    "express": "4.10.5",
+    "socket.io": "1.2.1"
+  }
+}
