@@ -41,6 +41,9 @@ function middleware ( options ) {
   app.set("paths.home", options.home);
   app.set("paths.temp", options.temp);
   
+  // any extension can use this for ide debugging stuff
+  app.set("debug-ide", options.debug);
+  
   // ensure system enviroment variables are passed
   app.set("system.env", options.env || process.env);
   
