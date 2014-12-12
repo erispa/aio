@@ -34,15 +34,17 @@ function middleware ( options ) {
   }
   
   // set some paths
-  app.set("paths.root", __aio);
-  app.set("paths.client", __client);
-  app.set("paths.extensions", __exts);
-  app.set("paths.server", __dirname);
-  app.set("paths.home", options.home);
-  app.set("paths.temp", options.temp);
+  app.set("paths", {
+    root: __aio,
+    client: __client,
+    extensions: __exts,
+    server: __dirname,
+    home: options.home,
+    temp: options.temp
+  });
   
   // any extension can use this for ide debugging stuff
-  app.set("debug-ide", options.debug);
+  app.set("debug", options.debug);
   
   // ensure system enviroment variables are passed
   app.set("system.env", options.env || process.env);
