@@ -37,7 +37,7 @@ function middleware ( app, options ) {
   app.set("aio.paths.server", __dirname);
   
   // ensure system enviroment variables are passed
-  app.set("system.env", env || process.env);
+  app.set("system.env", options.env || process.env);
   
   // init the aio extensions middleware
   app.set("aio.extension-paths'", [__exts]);
