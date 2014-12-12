@@ -23,7 +23,7 @@ var app = express();
 app.http = http.createServer(app);
 
 // inits the aio middleware and mounts it
-app.use(aio(app, {
+app.use(aio({
   home: join(env.HOME || env.HOMEPATH || env.USERPROFILE, '.aio'),
   temp: join(os.tmpdir(), uuid.v4()),
   debug: isset('-d') || isset('--debug') || false,

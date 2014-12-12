@@ -10,7 +10,10 @@ var __client = fs.join(__aio, 'client');
 var __exts = fs.join(__aio, 'extensions');
 
 // creates a new editor instance
-function middleware ( app, options ) {
+function middleware ( options ) {
+  
+  // create a new express app
+  var app = express();
   
   // setup the options or use defaults
   options = _.defaults(options || {}, middleware.options);
@@ -31,21 +34,23 @@ function middleware ( app, options ) {
   }
   
   // set some paths
-  app.set("aio.paths.root", __aio);
-  app.set("aio.paths.client", __client);
-  app.set("aio.paths.extensions", __exts);
-  app.set("aio.paths.server", __dirname);
+  app.set("paths.root", __aio);
+  app.set("paths.client", __client);
+  app.set("paths.extensions", __exts);
+  app.set("paths.server", __dirname);
   
   // ensure system enviroment variables are passed
   app.set("system.env", options.env || process.env);
   
   // init the aio extensions middleware
-  app.set("aio.extension-paths'", [__exts]);
+  app.set("extension-paths'", [__exts]);
   extensions.init(app, options);
   
   // load the client
   require(__client)(app, options.signups);
   
+  // return the app for express middleware usage
+  return app;
 }
 
 middleware.options = {
