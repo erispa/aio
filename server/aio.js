@@ -64,7 +64,8 @@ middleware.options = {
   home: null,
   temp: null,
   debug: false,
-  signups: true
+  signups: true,
+  env: process.env
 };
 
 module.exports = middleware;
