@@ -1,2 +1,37 @@
 #!/usr/bin/env node
-require("../")(process.cwd(), {});
+
+// external modules
+var aio = require('aio');
+var express = require('express');
+var uuid = require('uuid');
+
+// node modules
+var http = require('http');
+var os = require('os');
+var join = require('path').join;
+
+// system enviroment variables
+var env = process.env;
+
+// checks to see if the given command line argument is set
+function isset ( arg ) {
+  return process.argv.indexOf(arg) !== -1;
+}
+
+// creates a express application and http server
+var app = express();
+app.http = http.createServer(app);
+
+// inits the aio middleware and mounts it
+app.use(aio(app, {
+  home: join(env.HOME || env.HOMEPATH || env.USERPROFILE, '.aio'),
+  temp: join(os.tmpdir(), uuid.v4()),
+  debug: isset('-d') || isset('--debug') || false,
+  signups: true,
+  env: env
+}));
+
+// start the http server
+http.listen(function(){
+  app.emit('aio.http-started');
+});
