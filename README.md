@@ -1,6 +1,3 @@
-Aio IDE
-=======
-
 This project is the result of a Cloud9 clone gone off track and rebuilt from the ground up one too many times, the Aio IDE.
 
 Features
