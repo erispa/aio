@@ -1,11 +1,11 @@
 This project is the result of a Cloud9 clone gone off track and rebuilt from the ground up one too many times, the Aio IDE.
 
-Features
-========
+Features (and Goals)
+====================
   
   * Plugin system that blends server and client side `(wip)`
   * Socket.IO based client `(todo)`
-  * Express 4 server `(wip)`
+  * Express 4 based server `(wip)`
   * Simple and fast IDE/User database `(todo)`
   * Ace Editor for source file editing `(todo)`
   * custom Image, 2D/3D Model and Audio editors `(todo)`
